@@ -16,7 +16,7 @@ const dolcetto = new Wine('dolcetto bella vita', 'cantine bella vita', 2020, 75,
 //creare una classe PremiumWine che estende wine con le seguenti proprietà:
 //certification
 
-const barolo = new PremiumWine('brunate barolo', 'Francesco Borgogno', 2021, 75, 14, 'nebbiolo da barolo', 'piemonte', 'D.O.C.G');
+const barolo = new PremiumWine('brunate barolo', 'Francesco Borgogno', 2021, 75, 14, 40, 50, 'nebbiolo da barolo', 'piemonte', 'D.O.C.G');
 
 
 //creare i toString di tutte le classi
@@ -31,9 +31,15 @@ console.log(barolo.toString());
 //se ci sono abbastaza bottiglie le rimuove dal numero totale, altrimenti
 //non fa nulla e logga l'errore
 
+console.log(barolo.price); // prezzo reale con invecchiamento
+barolo.sellBottles(500);
+barolo.sellBottles(50); // errore
+barolo.price = -10;
+
 //aggingere una proprietà non esposta (protetta) a beverage chiamata _price
 //_price è esposta in lettura tramite getter
 //_price è esposta in scrittura tramite setter che controlla che il nuovo prezzo 
 //non sia negativo
 //l'unica differenza sta nel premiumWine che nel getter moltiplica il prezzo usando
 //questa formula prezzoReale = prezzo + (prezzo / 10 * anniDiInvecchiamento);
+
