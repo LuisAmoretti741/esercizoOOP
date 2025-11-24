@@ -1,41 +1,54 @@
 class Beverage {
-    constructor(name, producer, yob, quantity, alcohol, bottleNumber, _price) {
+
+    constructor(name, producer, yob, quantity, alcohol, price) {
         this.name = name;
         this.producer = producer;
         this.yob = yob;
         this.quantity = quantity;
         this.alcohol = alcohol;
-        this.bottleNumber = bottleNumber;
-        this._price = _price;
+        this.bottleNumber = 0;
+        this._price = 0;
+        this.price = price;
     }
 
-    get price() {
+    get price(){
         return this._price;
     }
 
-    set price(newPrice) {
-        if (newPrice < 0) {
-            console.log("Errore: prezzo negativo.");
-            return;
+    set price(newPrice){
+        if (newPrice >= 0) {
+            this._price = newPrice;
         }
-        this._price = newPrice;
     }
 
-    sellBottles(b) {
-        if (b <= this.bottleNumber) {
-            this.bottleNumber -= b;
+    toString() {
+        
+        return `nome: ${this.name}
+produttore: ${this.producer}
+annata: ${this.yob}
+cl: ${this.quantity}
+gradi: ${this.alcohol}
+n. bottiglie: ${this.bottleNumber}
+prezzo: ${this.price}`
+
+    }
+
+
+    addBottles(nbr){
+        if (nbr > 0) {
+            this.bottleNumber += nbr;
+        }
+    }
+
+    sellBottles(nbr){
+
+        if (nbr <= this.bottleNumber) {
+            //this.bottleNumber = this.bottleNumber - nbr;
+            this.bottleNumber -= nbr;    
         } else {
-            console.log("Errore: non ci sono abbastanza bottiglie da vendere.");
+            console.error('Bottiglie insufficienti, vendita annullata!!')
         }
+
     }
 
-    toString(){
-        return "name: " + this.name + "\n" +
-               "producer: " + this.producer + "\n" +
-               "yob: " + this.yob + "\n" +
-               "quantity: " + this.quantity + "\n" +
-               "alcohol: " + this.alcohol + "\n" +
-               "Nro Bottiglia: " + this.bottleNumber + "\n" +
-               "Prezzo: " + this._price;
-    }
 }
