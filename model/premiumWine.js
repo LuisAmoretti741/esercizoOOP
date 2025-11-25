@@ -9,7 +9,7 @@ class PremiumWine extends Wine{
         const age = new Date().getFullYear() - this.yob;
         console.log(age)
         //prezzoReale = prezzo + (prezzo / 10 * anniDiInvecchiamento);
-        const realPrice = this._price + (this._price / 10 * age);
+        const realPrice = (this._price + (this._price / 10 * age)).toFixed(2);
         return realPrice;
     }
 

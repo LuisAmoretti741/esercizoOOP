@@ -89,7 +89,7 @@ const main = document.getElementById('main-content');
 main.appendChild(newCard);
 
 const cardImage = document.createElement('img');
-cardImage.src = './assets/wine-glass.svg';
+cardImage.src = './assets/file.svg';
 cardImage.width = '100';
 newCard.appendChild(cardImage);
 
@@ -130,3 +130,83 @@ yobContainer.appendChild(yobKey);
 const yobValue = document.createElement('span');
 yobValue.innerText = champagne.yob;
 yobContainer.appendChild(yobValue);
+
+//////////////////////////////////////////////////////
+
+const quantityContainer = document.createElement('div');
+newCard.appendChild(quantityContainer);
+
+const quantityKey = document.createElement('strong');
+quantityKey.innerText = 'cl: ';
+quantityContainer.appendChild(quantityKey);
+
+const quantityValue = document.createElement('span');
+quantityValue.innerText = champagne.quantity;
+quantityContainer.appendChild(quantityValue);
+
+//////////////////////////////////////////////////////
+
+const alcoholContainer = document.createElement('div');
+newCard.appendChild(alcoholContainer);
+
+const alcoholKey = document.createElement('strong');
+alcoholKey.innerText = 'gradi: ';
+alcoholContainer.appendChild(alcoholKey);
+
+const alcoholValue = document.createElement('span');
+alcoholValue.innerText = champagne.alcohol;
+alcoholContainer.appendChild(alcoholValue);
+
+//////////////////////////////////////////////////////
+
+const viteContainer = document.createElement('div');
+newCard.appendChild(viteContainer);
+
+const viteKey = document.createElement('strong');
+viteKey.innerText = 'vitigno: ';
+viteContainer.appendChild(viteKey);
+
+const viteValue = document.createElement('span');
+viteValue.innerText = champagne.vite;
+viteContainer.appendChild(viteValue);
+
+//////////////////////////////////////////////////////
+
+const locationContainer = document.createElement('div');
+newCard.appendChild(locationContainer);
+
+const locationKey = document.createElement('strong');
+locationKey.innerText = 'locatità: ';
+locationContainer.appendChild(locationKey);
+
+const locationValue = document.createElement('span');
+locationValue.innerText = champagne.location;
+locationContainer.appendChild(locationValue);
+
+//////////////////////////////////////////////////////
+
+const certificationContainer = document.createElement('div');
+newCard.appendChild(certificationContainer);
+
+const certificationKey = document.createElement('strong');
+certificationKey.innerText = 'certificazione: ';
+certificationContainer.appendChild(certificationKey);
+
+const certificationValue = document.createElement('span');
+certificationValue.innerText = champagne.certification;
+certificationContainer.appendChild(certificationValue);
+
+//////////////////////////////////////////////////////
+
+const priceContainer = document.createElement('div');
+newCard.appendChild(priceContainer);
+
+const priceKey = document.createElement('strong');
+priceKey.innerText = 'prezzo: ';
+priceContainer.appendChild(priceKey);
+
+const priceValue = document.createElement('span');
+priceValue.innerText = champagne.price;
+priceContainer.appendChild(priceValue);
+
+///////////////////////////////////////////////////////////
